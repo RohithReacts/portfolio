@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Mail, FolderOpen } from "lucide-react";
 import Link from "next/link";
 import { EMAIL } from "./data/data";
+import { Button } from "@radix-ui/themes";
 
 export default function AboutMe() {
   return (
@@ -24,35 +25,37 @@ export default function AboutMe() {
           About Me
         </h2>
         <p className="mt-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
-          Hi, I’m <span className="font-semibold">Rohith Kumar</span> — a passionate
-          developer who loves crafting clean, responsive, and user-friendly web
-          applications. I specialize in building modern front-end experiences using{" "}
+          Hi, I’m <span className="font-semibold">Rohith Kumar</span> — a
+          passionate developer who loves crafting clean, responsive, and
+          user-friendly web applications. I specialize in building modern
+          front-end experiences using{" "}
           <span className="font-medium">Next.js</span>,{" "}
-          <span className="font-medium">Tailwind CSS</span>, and various UI libraries
-          like Radix UI and Shadcn/UI.
+          <span className="font-medium">Tailwind CSS</span>, and various UI
+          libraries like Radix UI and Shadcn/UI.
         </p>
         <p className="mt-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
-          When I’m not coding, I enjoy exploring new tech trends, improving my design
-          skills, and occasionally diving into automation testing with Playwright and
-          Cucumber.
+          When I’m not coding, I enjoy exploring new tech trends, improving my
+          design skills, and occasionally diving into automation testing with
+          Playwright and Cucumber.
         </p>
 
         {/* Buttons */}
         <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
-          <Link
-            href={`mailto:${EMAIL}`}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
-          >
-            <Mail className="w-4 h-4" />
-            Get In Touch
-          </Link>
-          <Link
-            href="#projects"
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-          >
-            <FolderOpen className="w-4 h-4" />
-            View My Work
-          </Link>
+          <Button asChild className="flex items-center gap-2">
+            <Link href={`mailto:${EMAIL}`}>
+              <Mail className="w-4 h-4" />
+              Get In Touch
+            </Link>
+          </Button>
+          <Button asChild className="flex items-center gap-2">
+            <Link
+              href="https://github.com/RohithReacts"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+            >
+              <FolderOpen className="w-4 h-4" />
+              View My Work
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

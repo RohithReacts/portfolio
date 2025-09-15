@@ -268,7 +268,7 @@ export default function Personal() {
           <Phone className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
           <Link
             className=" dark:text-zinc-300"
-            href={`https://wa.me/8374200125`}
+            href={`https://wa.me/918374200125`}
             target="_blank"
           >
             {NUM}

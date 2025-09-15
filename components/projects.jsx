@@ -5,12 +5,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
   CardContent,
   CardFooter,
 } from "../components/ui/card";
+import { Button } from "@radix-ui/themes";
 
 // ✅ Projects Data
 const projects = [
@@ -20,8 +18,8 @@ const projects = [
     description: "Booking app interface with animations.",
     image: "/assets/amt4.png",
     stack: "React · Tailwind",
-    previewLink: "/preview",
-    codeLink: "/code",
+    previewLink: "https://portfolio-ten-pi-tcpu51md1f.vercel.app/",
+    codeLink: "https://github.com/RohithReacts/portfolio",
   },
   {
     id: 2,
@@ -29,8 +27,8 @@ const projects = [
     description: "Minimal fashion e-commerce template.",
     image: "/assets/amt5.png",
     stack: "Next.js · Tailwind",
-    previewLink: "/preview",
-    codeLink: "/code",
+    previewLink: "https://portfolio-ten-pi-tcpu51md1f.vercel.app/",
+    codeLink: "https://github.com/RohithReacts/portfolio",
   },
   {
     id: 3,
@@ -38,8 +36,8 @@ const projects = [
     description: "Analytics dashboard with charts.",
     image: "/assets/amt6.png",
     stack: "React · ShadcnUI",
-    previewLink: "/preview",
-    codeLink: "/code",
+    previewLink: "https://portfolio-ten-pi-tcpu51md1f.vercel.app/",
+    codeLink: "https://github.com/RohithReacts/portfolio",
   },
 ];
 
@@ -65,64 +63,7 @@ export default function MinimalPortfolio() {
 
         {/* Main Card */}
         <Card className="rounded-2xl shadow-lg border border-neutral-100 dark:border-neutral-700">
-          <CardHeader className="flex flex-row items-center gap-6">
-            {/* Profile / Logo */}
-            <div className="w-28 h-28 rounded-xl overflow-hidden bg-gradient-to-tr from-indigo-400 to-sky-400 flex items-center justify-center text-white shrink-0">
-              <img
-                src="/assets/pic.png"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
-            </div>
 
-            {/* Info */}
-            <div className="text-left flex-1">
-              <CardTitle className="text-xl">Rohithreacts.dev</CardTitle>
-              <CardDescription className="mt-1">
-                Frontend engineer — crafting clean interfaces with delightful
-                microinteractions. Available for freelance & full-time work.
-              </CardDescription>
-
-              {/* Actions */}
-              <div className="mt-4 flex flex-wrap gap-3">
-                <motion.a
-                  href="#"
-                  whileHover={{ translateY: -3 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-neutral-900 text-white text-sm font-medium shadow-md hover:shadow-lg"
-                >
-                  Live Preview
-                </motion.a>
-
-                <motion.button
-                  whileHover={{ translateY: -3 }}
-                  className="inline-flex items-center cursor-pointer gap-2 px-4 py-2 rounded-md border border-neutral-200 dark:border-neutral-700 text-sm font-medium"
-                >
-                  Buy
-                  <span className="px-2 py-1 ml-2 text-xs rounded bg-neutral-100 dark:bg-neutral-700">
-                    $59
-                  </span>
-                </motion.button>
-              </div>
-            </div>
-
-            {/* Featured */}
-            <div className="hidden sm:flex sm:flex-col items-end gap-3">
-              <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                Featured
-              </span>
-              <motion.div
-                initial={{ rotate: -4 }}
-                whileHover={{ rotate: 0, scale: 1.02 }}
-                className="w-36 h-24 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-600"
-              >
-                <img
-                  src="/assets/pic1.png"
-                  alt="Featured Project"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            </div>
-          </CardHeader>
 
           <CardContent>
             {/* Projects Grid */}
@@ -160,14 +101,14 @@ export default function MinimalPortfolio() {
                       </span>
                       <div className="flex items-center gap-2">
                         <Link href={project.previewLink}>
-                          <button className="text-xs px-2 py-1 cursor-pointer rounded-md border border-neutral-200 dark:border-neutral-700">
+                          <Button className="text-xs px-2 py-1 cursor-pointer rounded-md border border-neutral-200 dark:border-neutral-700">
                             Preview
-                          </button>
+                          </Button>
                         </Link>
                         <Link href={project.codeLink}>
-                          <button className="text-xs px-2 py-1 cursor-pointer rounded-md bg-neutral-900 text-white">
+                          <Button className="text-xs px-2 py-1 cursor-pointer rounded-md bg-neutral-900 text-white">
                             Code
-                          </button>
+                          </Button>
                         </Link>
                       </div>
                     </CardFooter>

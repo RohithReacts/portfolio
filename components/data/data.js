@@ -5,7 +5,7 @@ export const PROJECTS = [
       'Advanced components and templates to craft beautiful websites.',
     link: 'https://www.youtube.com/watch?v=RGaW82k4dK4',
     video:
-      '/assets/front.mp4',
+      '/videos/front.mp4',
     id: 'project1',
   },
   {
@@ -13,7 +13,7 @@ export const PROJECTS = [
     description: 'UI kit to make beautiful, animated interfaces.',
     link: 'https://www.youtube.com/watch?v=wIwRpsbVCW0',
     video:
-      '/assets/back.mp4',
+      '/videos/back.mp4',
     id: 'project2',
   },
 ]

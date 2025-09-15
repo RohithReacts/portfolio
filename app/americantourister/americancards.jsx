@@ -18,6 +18,7 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
+import { Button } from "@radix-ui/themes";
 
 export default function AmericanTouristerCards() {
   return (
@@ -42,19 +43,14 @@ export default function AmericanTouristerCards() {
             <CardDescription>
               American Tourister is a trusted global brand offering high-quality
               travel products like luggage, backpacks, and accessories. With a
-              presence in 120+ countries, it's a go-to for millions of travelers.
+              presence in 120+ countries, it's a go-to for millions of
+              travelers.
             </CardDescription>
           </CardHeader>
           <CardFooter className="flex items-center justify-between text-xs">
             <span className="text-neutral-500 dark:text-neutral-400">
               Since 1933 • Global Support
             </span>
-            <Link
-              href="https://americantourister.in/pages/brand-story"
-              className="text-sm font-medium hover:text-neutral-800 dark:hover:text-neutral-200"
-            >
-              Learn more
-            </Link>
           </CardFooter>
         </Card>
 
@@ -72,12 +68,6 @@ export default function AmericanTouristerCards() {
             <span className="text-neutral-500 dark:text-neutral-400">
               Domestic Shipping
             </span>
-            <Link
-              href="https://americantourister.in/pages/fun-is-where-you-take-it"
-              className="text-sm font-medium hover:text-neutral-800 dark:hover:text-neutral-200"
-            >
-              Shipping info
-            </Link>
           </CardFooter>
         </Card>
 
@@ -95,12 +85,6 @@ export default function AmericanTouristerCards() {
             <span className="text-neutral-500 dark:text-neutral-400">
               Award-winning design
             </span>
-            <Link
-              href="https://americantourister.in/pages/travel-with-friends"
-              className="text-sm font-medium hover:text-neutral-800 dark:hover:text-neutral-200"
-            >
-              Our story
-            </Link>
           </CardFooter>
         </Card>
 
@@ -178,18 +162,14 @@ export default function AmericanTouristerCards() {
             </ul>
           </CardContent>
           <CardFooter className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href="https://americantourister.in/pages/service-and-warranty"
-              className="px-4 py-2 rounded-lg border font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800"
-            >
-              Visit Support
-            </Link>
-            <Link
-              href="/americantourister/connect"
-              className="px-4 py-2 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-800"
-            >
-              Contact Us
-            </Link>
+            <Button variant="solid" color="red">
+              <Link href="https://americantourister.in/pages/service-and-warranty">
+                Visit Support
+              </Link>
+            </Button>
+            <Button variant="solid" color="red">
+              <Link href="/americantourister/connect">Contact Us</Link>
+            </Button>
           </CardFooter>
         </Card>
 
@@ -218,7 +198,7 @@ export default function AmericanTouristerCards() {
                   label: "Sustainability",
                   href: "https://americantourister.in/pages/sustainability",
                 },
-                { label: "Account", href: "/account" },
+                
               ].map((link) => (
                 <li key={link.href}>
                   <Link

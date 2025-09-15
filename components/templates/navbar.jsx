@@ -14,7 +14,13 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+
+
+
+
+
 export function NavigationMenuDemo() {
+
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
 
@@ -54,7 +60,7 @@ export function NavigationMenuDemo() {
               priority
             />
           ) : (
-            <span className="text-xl font-bold">Portfolio</span>
+            <span className="text-xl font-medium" >Portfolio</span>
           )}
         </Link>
 

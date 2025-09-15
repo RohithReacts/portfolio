@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import "@radix-ui/themes/styles.css";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme/theme-provider";
 import { Header } from "../components/templates/header";
@@ -7,6 +8,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import NextTopLoader from "nextjs-toploader";
 import { ToastProvider } from "@/components/toastprovider";
+import { Box, Theme } from "@radix-ui/themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,37 +30,38 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ToastProvider>
-        <NextTopLoader
-        color="#2299DD"
-  initialPosition={0.08}
-  crawlSpeed={200}
-  height={3}
-  crawl={true}
-  showSpinner={true}
-  easing="ease"
-  speed={200}
-  shadow="0 0 10px #2299DD,0 0 5px #2299DD"
-  template='<div class="bar" role="bar"><div class="peg"></div></div> 
+          <NextTopLoader
+            color="#2299DD"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={true}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+            template='<div class="bar" role="bar"><div class="peg"></div></div> 
   <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
-  zIndex={1600}
-  showAtBottom={false}
-        />
+            zIndex={1600}
+            showAtBottom={false}
+          />
+          <Theme>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Box className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
+                <Box className="relative mx-auto w-full max-w-screen-xl flex-1 px-4 pt-20">
+                  <Header />
+                  <Suspense fallback={<Loading />}>{children}</Suspense>
 
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
-            <div className="relative mx-auto w-full max-w-screen-xl flex-1 px-4 pt-20">
-              <Header />
-              <Suspense fallback={<Loading />}>{children}</Suspense>
-
-              <Footer />
-            </div>
-          </div>
-        </ThemeProvider>
+                  <Footer />
+                </Box>
+              </Box>
+            </ThemeProvider>
+          </Theme>
         </ToastProvider>
       </body>
     </html>

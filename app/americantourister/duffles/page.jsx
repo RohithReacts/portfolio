@@ -3,6 +3,7 @@ import Image from "next/image";
 import { LaptopMinimalIcon, ShoppingBagIcon, ShoppingBasketIcon } from "lucide-react";
 import Link from "next/link";
 import { EMAIL } from "@/components/data/data";
+import { Button } from "@radix-ui/themes";
 
 export default function Duffles() {
   return (
@@ -36,6 +37,7 @@ export default function Duffles() {
 
           {/* CTA Buttons */}
           <div className="mt-7 flex flex-wrap gap-4 justify-center md:justify-start">
+            <Button asChild variant="solid" color="red">
             <Link
               href={`mailto:${EMAIL}`}
               className="flex items-center gap-2 px-5 py-2.5 text-sm md:text-base font-medium rounded-lg bg-red-600 text-white hover:bg-red-700 transition"
@@ -43,6 +45,7 @@ export default function Duffles() {
               <ShoppingBasketIcon className="w-4 h-4 md:w-5 md:h-5" />
               Shop all
             </Link>
+            </Button>
           </div>
         </div>
       </div>

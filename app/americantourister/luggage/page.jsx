@@ -4,6 +4,7 @@ import { ShoppingBagIcon } from "lucide-react";
 import Link from "next/link";
 import { EMAIL } from "@/components/data/data";
 import { CarouselSize } from "../cards";
+import { Button, Flex } from "@radix-ui/themes";
 
 export default function Luggage() {
   return (
@@ -43,19 +44,17 @@ export default function Luggage() {
 
           {/* CTA Buttons */}
           <div className="mt-7 flex flex-wrap gap-4 justify-center md:justify-start">
-            <Link
-              href={`mailto:${EMAIL}`}
-              className="flex items-center gap-2 px-5 py-2.5 text-sm md:text-base font-medium rounded-lg bg-red-600 text-white hover:bg-red-700 transition"
-            >
-              <ShoppingBagIcon className="w-4 h-4 md:w-5 md:h-5" />
-              Shop Now
-            </Link>
+            <Button asChild color="red" variant="solid">
+              <Link href={`mailto:${EMAIL}`}>
+                <ShoppingBagIcon className="w-5 h-5" />
+                <span>Shop Now</span>
+              </Link>
+            </Button>
           </div>
         </div>
-        
       </div>
       <div>
-        <CarouselSize/>
+        <CarouselSize />
       </div>
     </section>
   );

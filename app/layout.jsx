@@ -6,6 +6,7 @@ import { Footer } from "../components/templates/footer";
 import { Suspense } from "react";
 import Loading from "./loading";
 import NextTopLoader from "nextjs-toploader";
+import { ToastProvider } from "@/components/toastprovider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ToastProvider>
         <NextTopLoader
         color="#2299DD"
   initialPosition={0.08}
@@ -57,6 +59,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
         </ThemeProvider>
+        </ToastProvider>
       </body>
     </html>
   );

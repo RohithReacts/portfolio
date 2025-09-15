@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { LaptopMinimalIcon, ShoppingBagIcon } from "lucide-react";
+import { LaptopMinimalIcon } from "lucide-react";
 import Link from "next/link";
 import { EMAIL } from "@/components/data/data";
 

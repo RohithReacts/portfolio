@@ -292,6 +292,7 @@ export default function Personal() {
           ))}
         </div>
       </motion.section>
+     
     </motion.main>
   );
 }

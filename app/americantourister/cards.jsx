@@ -26,8 +26,13 @@ export function CarouselSize() {
         align: "start",
         loop: true,
       }}
-      className="w-full max-w-6xl mx-auto mt-6"
+      className="w-full max-w-4xl mx-auto mt-6"
     >
+      <h1 className="mb-3 text-2xl font-medium">Shop Products</h1>
+      <h2 className="mb-5 text-xl font-medium">
+        Our favorite picks for the season
+      </h2>
+
       <CarouselContent>
         {images.map((src, index) => (
           <CarouselItem
@@ -36,7 +41,7 @@ export function CarouselSize() {
           >
             <div className="p-2">
               <Card className="overflow-hidden rounded-2xl shadow-md">
-                <CardContent className="relative aspect-[4/6] p-0">
+                <CardContent className="relative aspect-[5/6] p-0">
                   <Image
                     src={src}
                     alt={`Slide ${index + 1}`}
@@ -52,8 +57,8 @@ export function CarouselSize() {
       </CarouselContent>
 
       {/* Navigation arrows */}
-      <CarouselPrevious className="left- bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
-      <CarouselNext className="right- bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
+      <CarouselPrevious className="left-15 mt-65 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
+      <CarouselNext className="right-15 mt-65 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
     </Carousel>
   );
 }

@@ -7,7 +7,7 @@ import { Button } from "@radix-ui/themes";
 
 export default function Backpacks() {
   return (
-    <section className="px-6 py-12 md:py-20 bg-white dark:bg-neutral-950">
+    <section className="px-6 py-12 md:py-20 ">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10">
         {/* Left: Product Image */}
         <div className="w-full md:w-[380px] lg:w-[420px]  rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
@@ -39,7 +39,7 @@ export default function Backpacks() {
           <div className="mt-7 flex flex-wrap gap-4 justify-center md:justify-start">
             <Button asChild variant="solid" color="red">
             <Link
-              href={`mailto:${EMAIL}`}
+              href="/"
           
             >
               <LaptopMinimalIcon className="w-4 h-4 md:w-5 md:h-5" />

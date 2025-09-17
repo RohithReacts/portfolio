@@ -149,8 +149,8 @@ html {
   }
 }
 
-.lobster-regular {
-  font-family: "Lobster", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+.radix-themes {
+  --cursor-button: pointer;
+  /* Other cursor customizations can be added here */
 }

@@ -7,7 +7,7 @@ import { Button } from "@radix-ui/themes";
 
 export default function AboutMe() {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center px-6 py-12 md:py-20 bg-white dark:bg-neutral-950">
+    <section className="flex flex-col md:flex-row items-center justify-center px-6 py-12 md:py-20">
       {/* Left: Profile Image */}
       <div className="w-40 h-40 md:w-60 md:h-60 rounded overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
         <Image

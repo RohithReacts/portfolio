@@ -57,8 +57,11 @@ export function CarouselSize() {
       </CarouselContent>
 
       {/* Navigation arrows */}
-      <CarouselPrevious className="left-15 mt-65 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
-      <CarouselNext className="right-15 mt-65 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
+<div className="flex items-center justify-center gap-4 mt-16">
+  <CarouselPrevious className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
+  <CarouselNext className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-md" />
+</div>
+
     </Carousel>
   );
 }

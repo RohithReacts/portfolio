@@ -25,6 +25,8 @@ import MinimalPortfolio from "../components/projects";
 import AboutMe from "../components/aboutme";
 import { InfiniteMovingCardsDemo } from "@/components/testimonials";
 import { AnimatedTooltipPreview } from "@/components/avatars";
+import ColorPalette from "@/components/ColorPalette";
+import TypographyGuide from "@/components/TypographyGuide";
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -158,7 +160,8 @@ export default function Personal() {
       >
         <MinimalPortfolio />
       </motion.section>
-
+<ColorPalette/>
+<TypographyGuide/>
       <motion.section
         id="work"
         variants={VARIANTS_SECTION}

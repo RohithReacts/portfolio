@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -14,19 +13,13 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-
-
-
-
-
 export function NavigationMenuDemo() {
-
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
 
   const isAmerican = pathname.startsWith("/americantourister");
 
-  // Navigation items (no icons now)
+  // Navigation items
   const navItems = isAmerican
     ? [
         { href: "/americantourister/luggage", label: "Luggage" },
@@ -36,7 +29,6 @@ export function NavigationMenuDemo() {
         { href: "/", label: "Back" },
       ]
     : [
-        
         { href: "#work", label: "Work" },
         { href: "#about", label: "About" },
         { href: "#connect", label: "Connect" },
@@ -44,7 +36,7 @@ export function NavigationMenuDemo() {
       ];
 
   return (
-    <nav className="w-full border-b border-gray-200 dark:border-gray-800 bg-background">
+    <nav className="w-full border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <Link
@@ -60,19 +52,19 @@ export function NavigationMenuDemo() {
               priority
             />
           ) : (
-            <span className="text-xl font-medium" >Portfolio</span>
+            <span className="text-xl font-medium">Portfolio</span>
           )}
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex">
+        <div className="hidden md:flex bg-none">
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.href}>
                   <NavigationMenuLink
                     asChild
-                    className={navigationMenuTriggerStyle()}
+                    className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent`}
                   >
                     <Link href={item.href}>{item.label}</Link>
                   </NavigationMenuLink>
@@ -84,8 +76,8 @@ export function NavigationMenuDemo() {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="p-2">
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <button onClick={() => setIsOpen(!isOpen)} className="p-2 ">
+            {isOpen ? <X className="h-6 w-6 cursor-pointer" /> : <Menu className="h-6 w-6 cursor-pointer" />}
           </button>
         </div>
       </div>
@@ -96,7 +88,10 @@ export function NavigationMenuDemo() {
           <ul className="flex flex-col space-y-2">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="block py-2">
+                <Link
+                  href={item.href}
+                  className="block py-2 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent"
+                >
                   {item.label}
                 </Link>
               </li>

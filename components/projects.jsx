@@ -35,7 +35,7 @@ const projects = [
     title: "Dashboard UI",
     description: "Analytics dashboard with charts.",
     image: "/assets/amt6.png",
-    stack: "React · ShadcnUI",
+    stack: "Vite js · ShadcnUI",
     previewLink: "https://portfolio-ten-pi-tcpu51md1f.vercel.app/",
     codeLink: "https://github.com/RohithReacts/portfolio",
   },
@@ -101,12 +101,12 @@ export default function MinimalPortfolio() {
                       </span>
                       <div className="flex items-center gap-2">
                         <Link href={project.previewLink}>
-                          <Button className="text-xs px-2 py-1 cursor-pointer rounded-md border border-neutral-200 dark:border-neutral-700">
+                          <Button variant="solid" className="text-xs px-2 py-1">
                             Preview
                           </Button>
                         </Link>
                         <Link href={project.codeLink}>
-                          <Button className="text-xs px-2 py-1 cursor-pointer rounded-md bg-neutral-900 text-white">
+                          <Button variant="solid" className="text-xs px-2 py-1">
                             Code
                           </Button>
                         </Link>

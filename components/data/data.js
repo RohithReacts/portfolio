@@ -3,20 +3,17 @@ export const PROJECTS = [
     name: 'Front-End Developer',
     description:
       'Advanced components and templates to craft beautiful websites.',
-    link: 'https://www.youtube.com/watch?v=RGaW82k4dK4',
-    video:
-      '/videos/front.mp4',
+    link: 'https://www.youtube.com/embed/RGaW82k4dK4', // use embed link
     id: 'project1',
   },
   {
     name: 'Learn Web Development',
     description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://www.youtube.com/watch?v=wIwRpsbVCW0',
-    video:
-      '/videos/back.mp4',
+    link: 'https://www.youtube.com/embed/wIwRpsbVCW0', // use embed link
     id: 'project2',
   },
-]
+];
+
 
 export const WORK_EXPERIENCE = [
   {

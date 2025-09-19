@@ -9,6 +9,7 @@ import Loading from "./loading";
 import NextTopLoader from "nextjs-toploader";
 import { ToastProvider } from "@/components/toastprovider";
 import { Box, Theme } from "@radix-ui/themes";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,10 +54,10 @@ export default function RootLayout({ children }) {
               disableTransitionOnChange
             >
               <Box className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
-                <Box className="relative mx-auto w-full max-w-screen-xl flex-1 px-4 pt-20">
+                <Box className="relative mx-auto w-full w-screen-xl flex-1 px-4 pt-20">
                   <Header />
                   <Suspense fallback={<Loading />}>{children}</Suspense>
-
+<ScrollToTop />
                   <Footer />
                 </Box>
               </Box>

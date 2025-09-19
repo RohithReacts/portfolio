@@ -1,16 +1,25 @@
 export const PROJECTS = [
   {
-    name: 'Front-End Developer',
+    name: 'Secret to Learning Code at 10x Speed',
     description:
       'Advanced components and templates to craft beautiful websites.',
-    link: 'https://www.youtube.com/embed/RGaW82k4dK4', // use embed link
+    link: 'https://youtu.be/qxmDgMKr8iE',
+    video:"/codespeed.mp4",
     id: 'project1',
   },
   {
-    name: 'Learn Web Development',
+    name: 'How People Learned to Code Before Google & StackOverflow',
     description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://www.youtube.com/embed/wIwRpsbVCW0', // use embed link
+    link: 'https://youtu.be/dzu9Nd_yR5A',
+    video:"/codebefore.mp4",
     id: 'project2',
+  },
+    {
+    name: 'Complete 2025 Full-Stack Developer Roadmap',
+    description: 'UI kit to make beautiful, animated interfaces.',
+    link: 'https://youtu.be/ASLA4KX5UUY',
+    video:"/coderoadmap.mp4",
+    id: 'project3',
   },
 ];
 
@@ -43,35 +52,6 @@ export const WORK_EXPERIENCE = [
 
 ]
 
-export const BLOG_POSTS = [
-  {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
-  },
-  {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
-  },
-  {
-    title: 'How to Export Metadata from MDX for Next.js SEO',
-    description:
-      'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
-    link: '/blog/example-mdx-metadata',
-    uid: 'blog-4',
-  },
-]
 
 export const SOCIAL_LINKS = [
   {

@@ -2,21 +2,24 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
+import * as Avatar from "@radix-ui/react-avatar";
 
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
-  className
+  className,
 }) => {
   const containerRef = React.useRef(null);
   const scrollerRef = React.useRef(null);
 
+  const [start, setStart] = useState(false);
+
   useEffect(() => {
     addAnimation();
   }, []);
-  const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -33,15 +36,16 @@ export const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty("--animation-direction", "forwards");
-      } else {
-        containerRef.current.style.setProperty("--animation-direction", "reverse");
-      }
+      containerRef.current.style.setProperty(
+        "--animation-direction",
+        direction === "left" ? "forwards" : "reverse"
+      );
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -53,40 +57,51 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   return (
     <div
       ref={containerRef}
       className={cn(
         "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
-      )}>
+      )}
+    >
       <ul
         ref={scrollerRef}
         className={cn(
           "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
-        )}>
-        {items.map((item, idx) => (
+        )}
+      >
+        {items.map((item) => (
           <li
+            key={item.name}
             className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
-            key={item.name}>
+          >
             <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"></div>
-              <span
-                className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
+              <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
                 {item.quote}
               </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
+
+              {/* Avatar + Name/Title */}
+              <div className="relative z-20 mt-6 flex flex-row items-center gap-3">
+                <Avatar.Root className="w-10 h-10 rounded-full overflow-hidden shrink-0">
+                  <Avatar.Image
+                    src={item.avatar}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
+                  <Avatar.Fallback className="flex items-center justify-center w-full h-full bg-gray-300 text-sm text-gray-700">
+                    {item.name?.charAt(0)}
+                  </Avatar.Fallback>
+                </Avatar.Root>
+
                 <span className="flex flex-col gap-1">
-                  <span
-                    className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                  <span className="text-sm leading-[1.6] font-medium text-neutral-700 dark:text-gray-300">
                     {item.name}
                   </span>
-                  <span
-                    className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                  <span className="text-xs leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
                     {item.title}
                   </span>
                 </span>

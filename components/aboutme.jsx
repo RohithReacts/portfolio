@@ -9,7 +9,7 @@ export default function AboutMe() {
   return (
     <section className="flex flex-col md:flex-row items-center justify-center px-6 py-12 md:py-20">
       {/* Left: Profile Image */}
-      <div className="w-40 h-40 md:w-60 md:h-60 rounded overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
+      <div className="w-40 h-40 md:w-60 md:h-60 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
         <Image
           src="/assets/rohith.jpg" // replace with your image path
           alt="Rohith Kumar"

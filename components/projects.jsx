@@ -100,11 +100,7 @@ export default function MinimalPortfolio() {
                         {project.stack}
                       </span>
                       <div className="flex items-center gap-2">
-                        <Link href={project.previewLink}>
-                          <Button variant="solid" className="text-xs px-2 py-1">
-                            Preview
-                          </Button>
-                        </Link>
+                        
                         <Link href={project.codeLink}>
                           <Button variant="solid" className="text-xs px-2 py-1">
                             Code

@@ -58,9 +58,9 @@ export default function AmtConnect() {
           width={1300}
           height={400}
           priority
-          className="object-cover"
+          className="object-cover rounded-xl"
         />
-        <div className="mt-8">
+        <div className="mt-8 ml-8">
           <h3 className="mb-5 text-lg font-medium">Connect</h3>
           <p className="mb-3 text-zinc-600 dark:text-zinc-400">
             Feel free to contact me at{" "}

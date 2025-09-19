@@ -10,7 +10,7 @@ export default function page() {
             width={1300}
             height={400}
               priority
-              className="object-cover"
+              className="object-cover rounded-xl"
             />
             <AmericanTouristerCards/>
           <div className="relative w-full max-w-6xl mx-auto">

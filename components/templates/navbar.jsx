@@ -16,6 +16,7 @@ import {
 export function NavigationMenuDemo() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
+  const [activeSection, setActiveSection] = React.useState("");
 
   const isAmerican = pathname.startsWith("/americantourister");
 
@@ -29,14 +30,44 @@ export function NavigationMenuDemo() {
         { href: "/", label: "Back" },
       ]
     : [
+        { href: "#home", label: "Home" },
+        { href: "#projects", label: "Projects" },
         { href: "#work", label: "Work" },
         { href: "#about", label: "About" },
+        { href: "#blog", label: "Blog" },
+        { href: "#themes", label: "Themes" },
         { href: "#connect", label: "Connect" },
         { href: "/americantourister", label: "Store" },
       ];
 
+  // Track active section while scrolling
+  React.useEffect(() => {
+    if (isAmerican) return; // skip scroll tracking for store pages
+
+    const handleScroll = () => {
+      // only track hash links
+      const sections = navItems.filter((i) => i.href.startsWith("#"));
+      let current = "";
+      for (let item of sections) {
+        const section = document.querySelector<HTMLElement>(item.href);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 80 && rect.bottom >= 80) {
+            current = item.href;
+            break;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // run once on mount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [navItems, isAmerican]);
+
   return (
-    <nav className="w-full border-b border-gray-200 dark:border-gray-800">
+    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <Link
@@ -62,12 +93,28 @@ export function NavigationMenuDemo() {
             <NavigationMenuList>
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.href}>
-                  <NavigationMenuLink
-                    asChild
-                    className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent`}
-                  >
-                    <Link href={item.href}>{item.label}</Link>
-                  </NavigationMenuLink>
+                  {item.href.startsWith("#") ? (
+                    // For hash links, use <a>
+                    <a
+                      href={item.href}
+                      className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent ${
+                        activeSection === item.href
+                          ? "text-blue-600 dark:text-blue-400 font-semibold"
+                          : ""
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    // For routes, use Next.js Link
+                    <NavigationMenuLink
+                      asChild
+                      className={`${navigationMenuTriggerStyle()} bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent`}
+                    >
+                      <Link href={item.href}>{item.label}</Link>
+                    </NavigationMenuLink>
+                  )}
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -76,8 +123,12 @@ export function NavigationMenuDemo() {
 
         {/* Mobile Hamburger */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="p-2 ">
-            {isOpen ? <X className="h-6 w-6 cursor-pointer" /> : <Menu className="h-6 w-6 cursor-pointer" />}
+          <button onClick={() => setIsOpen(!isOpen)} className="p-2">
+            {isOpen ? (
+              <X className="h-6 w-6 cursor-pointer" />
+            ) : (
+              <Menu className="h-6 w-6 cursor-pointer" />
+            )}
           </button>
         </div>
       </div>
@@ -88,12 +139,27 @@ export function NavigationMenuDemo() {
           <ul className="flex flex-col space-y-2">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block py-2 bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent"
-                >
-                  {item.label}
-                </Link>
+                {item.href.startsWith("#") ? (
+                  <a
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block py-2 ${
+                      activeSection === item.href
+                        ? "text-blue-600 dark:text-blue-400 font-semibold"
+                        : ""
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block py-2"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

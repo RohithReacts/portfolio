@@ -4,21 +4,21 @@ export const PROJECTS = [
     description:
       'Advanced components and templates to craft beautiful websites.',
     link: 'https://youtu.be/qxmDgMKr8iE',
-    video:"/codespeed.mp4",
+    video:"/videos/codespeed.mp4",
     id: 'project1',
   },
   {
     name: 'How People Learned to Code Before Google & StackOverflow',
     description: 'UI kit to make beautiful, animated interfaces.',
     link: 'https://youtu.be/dzu9Nd_yR5A',
-    video:"/codebefore.mp4",
+    video:"/videos/codebefore.mp4",
     id: 'project2',
   },
     {
     name: 'Complete 2025 Full-Stack Developer Roadmap',
     description: 'UI kit to make beautiful, animated interfaces.',
     link: 'https://youtu.be/ASLA4KX5UUY',
-    video:"/coderoadmap.mp4",
+    video:"/videos/coderoadmap.mp4",
     id: 'project3',
   },
 ];

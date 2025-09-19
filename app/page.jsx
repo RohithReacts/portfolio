@@ -17,8 +17,8 @@ import MinimalPortfolio from "../components/projects";
 import AboutMe from "../components/aboutme";
 import { InfiniteMovingCardsDemo } from "@/components/testimonials";
 import { AnimatedTooltipPreview } from "@/components/avatars";
-import ColorPalette from "@/components/ColorPalette";
-import TypographyGuide from "@/components/TypographyGuide";
+import ColorPalette from "@/components/color";
+import TypographyGuide from "@/components/type";
 import Image from "next/image";
 import {
   MorphingDialog,
@@ -27,7 +27,7 @@ import {
   MorphingDialogContent,
   MorphingDialogTrigger,
 } from "@/components/motion-primitives/morphing-dialog";
-import BlogSection from "@/components/BlogSection";
+import BlogSection from "@/components/blog";
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },

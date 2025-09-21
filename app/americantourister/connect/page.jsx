@@ -1,6 +1,6 @@
 "use client";
 
-import { EMAIL, MAP, NUM, SOCIAL_LINKS } from "@/components/data/data";
+import { EMAIL, MAP, NUM, SOCIAL_LINKS } from "@/components/data/constants";
 import { Mail, MapIcon, Phone } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -53,7 +53,7 @@ export default function AmtConnect() {
         transition={TRANSITION_SECTION}
       >
         <Image
-          src="/assets/here.webp" // place your image inside /public
+          src="/images/here.webp" // place your image inside /public
           alt="travel"
           width={1300}
           height={400}

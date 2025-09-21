@@ -13,11 +13,11 @@ import {
 
 export function CarouselSize() {
   const images = [
-    "/assets/baby.jpg",
-    "/assets/circurity.jpg",
-    "/assets/fast.jpg",
-    "/assets/alcove.jpg",
-    "/assets/air.webp",
+    "/images/baby.jpg",
+    "/images/circurity.jpg",
+    "/images/fast.jpg",
+    "/images/alcove.jpg",
+    "/images/air.webp",
   ]; // store images in public/assets folder
 
   return (

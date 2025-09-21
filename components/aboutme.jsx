@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Mail, FolderOpen } from "lucide-react";
 import Link from "next/link";
-import { EMAIL } from "./data/data";
+import { EMAIL } from "./data/constants";
 import { Button } from "@radix-ui/themes";
 
 export default function AboutMe() {
@@ -11,7 +11,7 @@ export default function AboutMe() {
       {/* Left: Profile Image */}
       <div className="w-40 h-40 md:w-60 md:h-60 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
         <Image
-          src="/assets/rohith.jpg" // replace with your image path
+          src="/images/rohith.jpg" // replace with your image path
           alt="Rohith Kumar"
           width={324}
           height={324}

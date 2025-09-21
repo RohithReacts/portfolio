@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { LaptopMinimalIcon, ShoppingBagIcon, ShoppingBasketIcon } from "lucide-react";
+import { ShoppingBasketIcon } from "lucide-react";
 import Link from "next/link";
-import { EMAIL } from "@/components/data/data";
 import { Button } from "@radix-ui/themes";
 
 export default function Duffles() {
@@ -12,7 +11,7 @@ export default function Duffles() {
         {/* Left: Product Image */}
         <div className="w-full md:w-[380px] lg:w-[420px]  rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
           <Image
-            src="/assets/amt2.webp"
+            src="/images/amt2.webp"
             alt="American Tourister Luggage"
             width={825}
             height={1024}

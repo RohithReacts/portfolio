@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/americantourister/(.*)", "dest": "/americantourister/$1" },
+
+    { "src": "/projects", "dest": "/" },
+    { "src": "/work", "dest": "/" },
+    { "src": "/about", "dest": "/" },
+    { "src": "/blog", "dest": "/" },
+    { "src": "/connect", "dest": "/" },
+    { "src": "/themes", "dest": "/" },
+
+    { "src": "/images/(.*)", "dest": "/images/$1" },
+
+    { "src": "/videos/(.*)", "dest": "/videos/$1" },
+
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}

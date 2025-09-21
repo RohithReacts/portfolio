@@ -17,7 +17,7 @@ export default function GlobalNotFound() {
       <body className="h-screen w-screen relative">
         {/* Fullscreen Image */}
         <Image
-          src="/assets/404.jpg" // place your image inside /public
+          src="/images/404.jpg" // place your image inside /public
           alt="Page not found illustration"
           fill
           priority

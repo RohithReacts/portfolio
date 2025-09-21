@@ -2,9 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { ShoppingBagIcon } from "lucide-react";
 import Link from "next/link";
-import { EMAIL } from "@/components/data/data";
 import { CarouselSize } from "../cards";
-import { Button, Flex } from "@radix-ui/themes";
+import { Button } from "@radix-ui/themes";
 
 export default function Luggage() {
   return (
@@ -13,7 +12,7 @@ export default function Luggage() {
         {/* Left: Product Image */}
         <div className="w-full md:w-[380px] lg:w-[420px]  rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700">
           <Image
-            src="/assets/amt.webp"
+            src="/images/amt.webp"
             alt="American Tourister Luggage"
             width={824}
             height={1024}

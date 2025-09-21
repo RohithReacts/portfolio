@@ -5,7 +5,7 @@ export default function page() {
   return (
     <div>
      <Image
-              src="/assets/travel.webp" 
+              src="/images/travel.webp" 
               alt="travel"
             width={1300}
             height={400}
@@ -15,7 +15,7 @@ export default function page() {
             <AmericanTouristerCards/>
           <div className="relative w-full max-w-6xl mx-auto">
       <Image
-        src="/assets/amt3.webp" 
+        src="/images/amt3.webp" 
         alt="travel"
         width={1300}
         height={400}

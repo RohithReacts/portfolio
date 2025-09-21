@@ -76,7 +76,7 @@ export function NavigationMenuDemo() {
         >
           {isAmerican ? (
             <Image
-              src="/assets/amt.png"
+              src="/images/amt.png"
               alt="American Tourister Logo"
               width={120}
               height={40}

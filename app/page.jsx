@@ -12,7 +12,7 @@ import {
   SOCIAL_LINKS,
   NUM,
   MAP1,
-} from "../components/data/data";
+} from "../components/data/constants";
 import MinimalPortfolio from "../components/projects";
 import AboutMe from "../components/aboutme";
 import { InfiniteMovingCardsDemo } from "@/components/testimonials";
@@ -28,6 +28,7 @@ import {
   MorphingDialogTrigger,
 } from "@/components/motion-primitives/morphing-dialog";
 import BlogSection from "@/components/blog";
+
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -114,14 +115,13 @@ export default function Personal() {
         animate="visible"
       >
         <Image
-          src="/assets/office.jpg"
+          src="/images/office.jpg"
           alt="travel"
           width={1300}
           height={400}
           priority
           className="object-cover rounded-xl"
         />
-
         {/* Projects Section */}
         <motion.section
           id="projects"
@@ -228,6 +228,8 @@ export default function Personal() {
         >
           <BlogSection />
         </motion.section>
+
+ 
 
         {/* Testimonials */}
         <motion.section

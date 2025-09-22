@@ -233,7 +233,7 @@ export default function Personal() {
 
         {/* Testimonials */}
         <motion.section
-          id="testimonials"
+          id="connect"
           variants={VARIANTS_SECTION}
           transition={TRANSITION_SECTION}
         >

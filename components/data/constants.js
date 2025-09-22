@@ -26,27 +26,27 @@ export const PROJECTS = [
 
 export const WORK_EXPERIENCE = [
   {
-    company: process.env.NEXT_PUBLIC_COMPANY_1 || '',
-    title: process.env.NEXT_PUBLIC_TITLE_1 || '',
-    start: process.env.NEXT_PUBLIC_START_1 || '',
-    end: process.env.NEXT_PUBLIC_END_1 || '',
-    link: process.env.NEXT_PUBLIC_LINK_1 || '',
+    company: "American Tourister",
+    title: "Sales Man",
+    start: "2014",
+    end: "Present",
+    link: "https://americantourister.in/",
     id: 'work1',
   },
   {
-    company: process.env.NEXT_PUBLIC_COMPANY_2 || '',
-    title: process.env.NEXT_PUBLIC_TITLE_2 || '',
-    start: process.env.NEXT_PUBLIC_START_2 || '',
-    end: process.env.NEXT_PUBLIC_END_2 || '',
-    link: process.env.NEXT_PUBLIC_LINK_2 || '',
+    company: "Freelance",
+    title: "Front-end Developer",
+    start: "2023",
+    end: "Present",
+    link: "https://roadmap.sh/frontend",
     id: 'work2',
   },
   {
-    company: process.env.NEXT_PUBLIC_COMPANY_3 || '',
-    title: process.env.NEXT_PUBLIC_TITLE_3 || '',
-    start: process.env.NEXT_PUBLIC_START_3 || '',
-    end: process.env.NEXT_PUBLIC_END_3 || '',
-    link: process.env.NEXT_PUBLIC_LINK_3 || '',
+    company: "Freelance",
+    title: "Back-end Developer",
+    start: "2024",
+    end: "2026",
+    link: "https://roadmap.sh/backend",
     id: 'work3',
   },
 ]
@@ -71,10 +71,10 @@ export const SOCIAL_LINKS = [
   },
 ]
 
-export const EMAIL = process.env.NEXT_PUBLIC_EMAIL || ''
-export const NUM = process.env.NEXT_PUBLIC_NUM || ''
-export const MAP = process.env.NEXT_PUBLIC_MAP || ''
-export const MAP1 = process.env.NEXT_PUBLIC_MAP1 || ''
+export const EMAIL = "Gujarathirohithkumar@gmail.com"
+export const NUM = "8374200125"
+export const MAP = "Vaishnavi Sales"
+export const MAP1 = "Rohithreacts"
 
 
 

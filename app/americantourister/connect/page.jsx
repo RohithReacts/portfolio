@@ -48,9 +48,12 @@ export default function AmtConnect() {
   return (
     <div>
       <motion.section
-        id="connect"
+        
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
       >
         <Image
           src="/images/here.webp" // place your image inside /public

@@ -1,6 +1,8 @@
 "use client";
+
 import { createContext, useContext, useState, useEffect } from "react";
 import { X, CheckCircle, AlertCircle, Info, XCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ToastContext = createContext(null);
 
@@ -28,76 +30,64 @@ const variants = {
 };
 
 export function ToastProvider({ children }) {
-  const [toast, setToast] = useState({ show: false, type: "success", message: "" });
+  const [toasts, setToasts] = useState([]);
 
-  useEffect(() => {
-    let timer;
-    if (toast.show) {
-      timer = setTimeout(() => setToast({ ...toast, show: false }), 4000);
-    }
-    return () => clearTimeout(timer);
-  }, [toast]);
+  const addToast = (type, message) => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id, type, message }]);
+    setTimeout(() => removeToast(id), 4000);
+  };
 
-  const showToast = (type, message) => {
-    setToast({ show: true, type, message });
+  const removeToast = (id) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
   };
 
   return (
-    <ToastContext.Provider value={{
-      success: (msg) => showToast("success", msg),
-      error: (msg) => showToast("error", msg),
-      warning: (msg) => showToast("warning", msg),
-      info: (msg) => showToast("info", msg),
-    }}>
+    <ToastContext.Provider
+      value={{
+        success: (msg) => addToast("success", msg),
+        error: (msg) => addToast("error", msg),
+        warning: (msg) => addToast("warning", msg),
+        info: (msg) => addToast("info", msg),
+      }}
+    >
       {children}
 
-      {/* Toast UI */}
-      {toast.show && (
-        <div className="fixed bottom-5 right-5 max-w-xs w-full bg-white shadow-lg rounded-xl p-4 border flex items-start space-x-3 animate-slide-up z-50">
-          <div className="flex-shrink-0">{variants[toast.type].icon}</div>
-          <div className="flex-1">
-            <p className="font-semibold text-gray-800">{variants[toast.type].title}</p>
-            <p className="text-gray-500 text-sm">{toast.message}</p>
-            <div className="h-1 bg-gray-200 mt-3 rounded overflow-hidden">
-              <div className={`h-1 ${variants[toast.type].color} animate-progress`} />
-            </div>
-          </div>
-          <button
-            onClick={() => setToast({ ...toast, show: false })}
-            className="text-gray-400 hover:text-gray-600"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-      )}
-
-      {/* Animations */}
-      <style jsx>{`
-        .animate-progress {
-          animation: shrink 4s linear forwards;
-        }
-        @keyframes shrink {
-          from {
-            width: 100%;
-          }
-          to {
-            width: 0%;
-          }
-        }
-        .animate-slide-up {
-          animation: slideUp 0.3s ease-out;
-        }
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+      {/* Toast Stack */}
+      <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 flex flex-col space-y-3 z-50">
+        <AnimatePresence>
+          {toasts.map((toast) => (
+            <motion.section
+              key={toast.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="max-w-xs w-full bg-white shadow-lg rounded-xl p-4 border flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3"
+            >
+              <div className="flex-shrink-0">{variants[toast.type].icon}</div>
+              <div className="flex-1 w-full">
+                <p className="font-semibold text-gray-800">{variants[toast.type].title}</p>
+                <p className="text-gray-500 text-sm">{toast.message}</p>
+                <div className="h-1 bg-gray-200 mt-2 rounded overflow-hidden">
+                  <motion.div
+                    className={`${variants[toast.type].color} h-1`}
+                    initial={{ width: "100%" }}
+                    animate={{ width: 0 }}
+                    transition={{ duration: 4, ease: "linear" }}
+                  />
+                </div>
+              </div>
+              <button
+                onClick={() => removeToast(toast.id)}
+                className="text-gray-400 hover:text-gray-600 mt-2 sm:mt-0"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </motion.section>
+          ))}
+        </AnimatePresence>
+      </div>
     </ToastContext.Provider>
   );
 }

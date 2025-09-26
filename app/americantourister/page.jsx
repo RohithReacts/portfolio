@@ -1,9 +1,25 @@
+"use client";
+import { motion } from "motion/react";
 import Image from "next/image";
 import AmericanTouristerCards from "./americancards";
 
+
+const VARIANTS_SECTION = {
+  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+};
+const TRANSITION_SECTION = { duration: 0.6 };
+
 export default function page() {
   return (
-    <div>
+    <motion.section
+    variants={VARIANTS_SECTION}
+          transition={TRANSITION_SECTION}
+          initial={{ scale: 0 }} animate={{ scale: 1 }}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          >
+
      <Image
               src="/images/travel.webp" 
               alt="travel"
@@ -29,6 +45,8 @@ export default function page() {
         </h1>
       </div>
     </div>
-    </div>
+    
+    </motion.section>
+    
   )
 }

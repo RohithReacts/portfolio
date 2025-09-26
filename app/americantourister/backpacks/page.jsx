@@ -1,8 +1,15 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { LaptopMinimalIcon } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@radix-ui/themes";
+import { motion } from "motion/react";
+
+const leftButton = {
+  hidden: { opacity: 0, x: -50 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
 
 export default function Backpacks() {
   return (
@@ -34,18 +41,18 @@ export default function Backpacks() {
           Trusted by generation of travellers we're proud of our 90 year story.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-7 flex flex-wrap gap-4 justify-center md:justify-start">
-            <Button asChild variant="solid" color="red">
-            <Link
-              href="/"
           
-            >
-              <LaptopMinimalIcon className="w-4 h-4 md:w-5 md:h-5" />
-              Discover
-            </Link>
-            </Button>
-          </div>
+          <div className="flex gap-4 mt-5">
+              <motion.a
+                variants={leftButton}
+                href="/"
+                className="flex items-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
+              >
+                <LaptopMinimalIcon className="w-4 h-4" />
+                 Discover
+              </motion.a>
+              
+            </div>
         </div>
       </div>
     </section>

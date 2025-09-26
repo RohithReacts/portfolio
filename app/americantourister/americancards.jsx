@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 import {
   Globe,
   Truck,
@@ -9,6 +10,8 @@ import {
   Store,
   Headphones,
   Link as LinkIcon,
+  MonitorDotIcon,
+  Send,
 } from "lucide-react";
 import {
   Card,
@@ -18,7 +21,18 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { Button } from "@radix-ui/themes";
+
+const leftButton = {
+  hidden: { opacity: 0, x: -50 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
+const rightButton = {
+  hidden: { opacity: 0, x: 50 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
+
 
 export default function AmericanTouristerCards() {
   return (
@@ -162,14 +176,25 @@ export default function AmericanTouristerCards() {
             </ul>
           </CardContent>
           <CardFooter className="flex flex-col sm:flex-row gap-3">
-            <Button variant="solid" color="red">
-              <Link href="https://americantourister.in/pages/service-and-warranty">
-                Visit Support
-              </Link>
-            </Button>
-            <Button variant="solid" color="red">
-              <Link href="/americantourister/connect">Contact Us</Link>
-            </Button>
+           
+            <div className="flex gap-4 mt-5">
+              <motion.a
+                variants={leftButton}
+                href="https://americantourister.in/pages/service-and-warranty"
+                className="flex items-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
+              >
+                <MonitorDotIcon className="w-4 h-4" />
+                  Visit Support
+              </motion.a>
+              <motion.a
+                variants={rightButton}
+                href="/americantourister/connect"
+                className="flex items-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition"
+              >
+                <Send className="w-4 h-4" />
+                Contact Us
+              </motion.a>
+            </div>
           </CardFooter>
         </Card>
 

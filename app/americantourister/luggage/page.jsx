@@ -1,9 +1,16 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { ShoppingBagIcon } from "lucide-react";
-import Link from "next/link";
 import { CarouselSize } from "../cards";
-import { Button } from "@radix-ui/themes";
+import { motion } from "motion/react";
+
+const leftButton = {
+  hidden: { opacity: 0, x: -50 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
 
 export default function Luggage() {
   return (
@@ -41,15 +48,18 @@ export default function Luggage() {
             trip with the latest in travel gear and timeless designs.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-7 flex flex-wrap gap-4 justify-center md:justify-start">
-            <Button asChild color="red" variant="solid">
-              <Link href="/">
-                <ShoppingBagIcon className="w-5 h-5" />
-                <span>Shop Now</span>
-              </Link>
-            </Button>
-          </div>
+          
+            <div className="flex gap-4 mt-5">
+              <motion.a
+                variants={leftButton}
+                href="/"
+                className="flex items-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
+              >
+                <ShoppingBagIcon className="w-4 h-4" />
+                 Shop Now
+              </motion.a>
+              
+            </div>
         </div>
       </div>
       <div>

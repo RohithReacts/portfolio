@@ -2,7 +2,7 @@
 import { EMAIL, MAP1, NUM, SOCIAL_LINKS } from "@/components/data/constants";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
 import { Mail, MapIcon, Phone } from "lucide-react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const VARIANTS_SECTION = {
@@ -33,7 +33,6 @@ export default function Connect() {
           transition={TRANSITION_SECTION}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
         >
           <h3 className="mb-5 text-lg font-medium">Connect</h3>
           <p className="mb-3 text-zinc-600 dark:text-zinc-400">

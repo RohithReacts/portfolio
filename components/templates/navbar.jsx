@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   NavigationMenu,
@@ -37,17 +37,16 @@ export function Navbar() {
         { href: "#projects", label: "Projects" },
         { href: "#about", label: "About" },
         { href: "#connect", label: "Connect" },
-
         {
           href: "/",
-          label: "Menu",
+          label: "Services",
           dropdown: [
-            { href: "#themes", label: "Themes" },
+            { href: "#apps", label: "Apps" },
             { href: "#blog", label: "Blog" },
             { href: "#testimonials", label: "Testimonials" },
+            { href: "#team", label: "Team" },
           ],
         },
-
         { href: "/americantourister", label: "Store" },
       ];
 
@@ -76,7 +75,7 @@ export function Navbar() {
   }, [navItems, isAmerican]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-gray-800">
+    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-black/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <Link
@@ -92,7 +91,11 @@ export function Navbar() {
               priority
             />
           ) : (
-            <span className="text-xl font-medium">Portfolio</span>
+            <div>
+              <span className="text-xl font-medium text-gray-900 dark:text-gray-100">
+                Portfolio
+              </span>
+            </div>
           )}
         </Link>
 
@@ -109,19 +112,19 @@ export function Navbar() {
                       >
                         {item.label}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-gray-900 rounded-md">
+                      <NavigationMenuContent className="bg-gray-100 dark:bg-gray-900 rounded-md shadow-lg">
                         <motion.ul
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.2 }}
-                          className="flex flex-col space-y-2"
+                          className="flex flex-col space-y-2 p-2"
                         >
                           {item.dropdown.map((drop) => (
                             <li key={drop.href}>
                               <Link
                                 href={drop.href}
-                                className="flex px-2 py-1 hover:bg-gray-800 rounded"
+                                className="flex px-3 py-2 rounded text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800"
                               >
                                 {drop.label}
                               </Link>
@@ -141,7 +144,7 @@ export function Navbar() {
                         className={`${navigationMenuTriggerStyle()} ${
                           activeSection === item.href
                             ? "text-blue-600 dark:text-blue-400 font-semibold"
-                            : ""
+                            : "text-gray-800 dark:text-gray-200"
                         }`}
                         onClick={() => setIsOpen(false)}
                       >
@@ -149,7 +152,12 @@ export function Navbar() {
                       </a>
                     ) : (
                       <NavigationMenuLink asChild>
-                        <Link href={item.href}>{item.label}</Link>
+                        <Link
+                          href={item.href}
+                          className="text-gray-800 dark:text-gray-200"
+                        >
+                          {item.label}
+                        </Link>
                       </NavigationMenuLink>
                     )}
                   </NavigationMenuItem>
@@ -162,7 +170,11 @@ export function Navbar() {
         {/* Mobile Hamburger */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="p-2">
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? (
+              <X className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+            ) : (
+              <Menu className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+            )}
           </button>
         </div>
       </div>
@@ -175,7 +187,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden px-4 pb-4"
+            className="md:hidden px-4 pb-4 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
           >
             <ul className="flex flex-col justify-center items-center space-y-2">
               {navItems.map((item) => (
@@ -183,7 +195,7 @@ export function Navbar() {
                   {item.dropdown ? (
                     <>
                       <button
-                        className="flex justify-center items-center w-full py-2 font-semibold"
+                        className="flex justify-center items-center w-full py-2 font-semibold text-gray-800 dark:text-gray-200"
                         onClick={() =>
                           setMobileDropdown(
                             mobileDropdown === item.href ? null : item.href
@@ -206,7 +218,7 @@ export function Navbar() {
                                 <Link
                                   href={drop.href}
                                   onClick={() => setIsOpen(false)}
-                                  className="block py-2"
+                                  className="block py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
                                 >
                                   {drop.label}
                                 </Link>
@@ -223,7 +235,7 @@ export function Navbar() {
                       className={`block py-2 ${
                         activeSection === item.href
                           ? "text-blue-600 dark:text-blue-400 font-semibold"
-                          : ""
+                          : "text-gray-800 dark:text-gray-200"
                       }`}
                     >
                       {item.label}
@@ -232,7 +244,7 @@ export function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="block py-2"
+                      className="block py-2 text-gray-800 dark:text-gray-200"
                     >
                       {item.label}
                     </Link>

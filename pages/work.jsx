@@ -1,15 +1,12 @@
 "use client";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 import { WORK_EXPERIENCE } from "@/components/data/constants";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
 import Image from "next/image";
+import { Box } from "@radix-ui/themes";
 
-const VARIANTS_SECTION = {
-  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-};
-const TRANSITION_SECTION = { duration: 0.2 };
+
 
 export default function Work() {
   const icons = [
@@ -25,13 +22,9 @@ export default function Work() {
     "/icon-10.svg",
   ];
   return (
-    <motion.section
+    <Box
       id="work"
-      variants={VARIANTS_SECTION}
-      transition={TRANSITION_SECTION}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      
     >
       <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
       <div className="flex flex-col gap-4">
@@ -85,6 +78,6 @@ export default function Work() {
           ))}
         </motion.div>
       </div>
-    </motion.section>
+    </Box>
   );
 }

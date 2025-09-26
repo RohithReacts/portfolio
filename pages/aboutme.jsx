@@ -3,7 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { Mail, FolderOpen } from "lucide-react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import { EMAIL } from "@/components/data/constants";
 
 const leftButton = {
   hidden: { opacity: 0, x: -50 },
@@ -22,7 +23,6 @@ export default function AboutMe() {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ once: true }}
       className="flex flex-col md:flex-row items-center justify-center px-6 py-12 md:py-20"
     >
       {/* Left: Profile Image */}
@@ -30,7 +30,6 @@ export default function AboutMe() {
         initial={{ scale: 0.9, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
-        viewport={{ once: true }}
         className="w-40 h-40 md:w-60 md:h-60 rounded-2xl overflow-hidden shadow-lg border border-neutral-200 dark:border-neutral-700 flex-shrink-0"
       >
         <Image
@@ -74,7 +73,7 @@ export default function AboutMe() {
             <div className="flex gap-4 mt-5">
               <motion.a
                 variants={leftButton}
-                href="https://github.com/RohithReacts/portfolio"
+                href={`mailto:${EMAIL}`}
                 className="flex items-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
               >
                 <Mail className="w-4 h-4" />
@@ -82,7 +81,7 @@ export default function AboutMe() {
               </motion.a>
               <motion.a
                 variants={rightButton}
-                href="/"
+                href="https://github.com/RohithReacts/portfolio"
                 className="flex items-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition"
               >
                 <FolderOpen className="w-4 h-4" />

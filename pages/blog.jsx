@@ -1,9 +1,8 @@
-"use client";
 
 import Link from "next/link";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import * as Separator from "@radix-ui/react-separator";
-import { motion } from "framer-motion";
+import { Box } from "@radix-ui/themes";
 
 const blogs = [
   {
@@ -28,13 +27,9 @@ const blogs = [
 
 export default function Blog() {
   return (
-    <motion.section
+    <Box
       id="blog"
-      className="py-16"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
+     
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-medium tracking-tight text-zinc-900 dark:text-zinc-100">
@@ -47,10 +42,8 @@ export default function Blog() {
         {/* Responsive Grid */}
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog) => (
-            <motion.div
+            <div
               key={blog.slug}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
             >
               <Link
                 href={`/blog/${blog.slug}`}
@@ -78,10 +71,10 @@ export default function Blog() {
                   </p>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </motion.section>
+    </Box>
   );
 }

@@ -63,14 +63,13 @@ const itemVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.1, ease: "easeOut" } },
 };
 
-export function Avatar() {
+export default function Avatar() {
   return (
     <motion.section
       id="team"
       className="w-full py-12 px-4 sm:px-6 lg:px-8 flex justify-center"
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="max-w-5xl w-full flex flex-col items-center">

@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { ShoppingBagIcon } from "lucide-react";
 import { CarouselSize } from "../cards";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const leftButton = {
   hidden: { opacity: 0, x: -50 },

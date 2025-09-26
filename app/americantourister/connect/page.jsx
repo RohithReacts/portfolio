@@ -1,20 +1,11 @@
-"use client";
 
 import { EMAIL, MAP, NUM, SOCIAL_LINKS } from "@/components/data/constants";
 import { Mail, MapIcon, Phone } from "lucide-react";
 import Link from "next/link";
-import { motion } from "motion/react";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
 import Image from "next/image";
 
-const VARIANTS_SECTION = {
-  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-};
 
-const TRANSITION_SECTION = {
-  duration: 0.3,
-};
 
 function MagneticSocialLink({ children, link }) {
   return (
@@ -47,13 +38,9 @@ function MagneticSocialLink({ children, link }) {
 export default function AmtConnect() {
   return (
     <div>
-      <motion.section
+      <section
         
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-          initial={{ scale: 0 }} animate={{ scale: 1 }}
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+        
       >
         <Image
           src="/images/here.webp" // place your image inside /public
@@ -102,7 +89,7 @@ export default function AmtConnect() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 }

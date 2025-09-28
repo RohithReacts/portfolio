@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,53 +10,43 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [mobileDropdown, setMobileDropdown] = React.useState(null);
-  const pathname = usePathname();
   const [activeSection, setActiveSection] = React.useState("");
+  const pathname = usePathname();
 
-  const isAmerican = pathname.startsWith("/americantourister");
-
-  const navItems = isAmerican
-    ? [
-        { href: "/americantourister/luggage", label: "Luggage" },
-        { href: "/americantourister/backpacks", label: "Backpacks" },
-        { href: "/americantourister/duffles", label: "Duffles" },
-        { href: "/americantourister/connect", label: "Connect" },
-        { href: "/", label: "Back" },
-      ]
-    : [
-        { href: "#work", label: "Work" },
-        { href: "#projects", label: "Projects" },
-        { href: "#about", label: "About" },
-        { href: "#connect", label: "Connect" },
-        {
-          href: "/",
-          label: "Services",
-          dropdown: [
-            { href: "#apps", label: "Apps" },
-            { href: "#blog", label: "Blog" },
-            { href: "#testimonials", label: "Testimonials" },
-            { href: "#team", label: "Team" },
-          ],
-        },
-        { href: "/americantourister", label: "Store" },
-      ];
+  const navItems = [
+    { href: "#work", label: "Work" },
+    { href: "#projects", label: "Projects" },
+    { href: "#about", label: "About" },
+    { href: "#connect", label: "Connect" },
+    {
+      href: "/",
+      label: "Services",
+      dropdown: [
+        { href: "#apps", label: "Apps" },
+        { href: "#blog", label: "Blog" },
+        { href: "#testimonials", label: "Testimonials" },
+        { href: "#team", label: "Team" },
+      ],
+    },
+  ];
 
   React.useEffect(() => {
-    if (isAmerican) return;
-
     const handleScroll = () => {
       const sections = navItems.filter((i) => i.href.startsWith("#"));
       let current = "";
       for (let item of sections) {
-        const section = document.querySelector < HTMLElement > item.href;
+        const section = document.querySelector<HTMLElement>(item.href);
         if (section) {
           const rect = section.getBoundingClientRect();
           if (rect.top <= 80 && rect.bottom >= 80) {
@@ -72,31 +61,16 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [navItems, isAmerican]);
+  }, [navItems]);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-black/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link
-          href={isAmerican ? "/americantourister" : "/"}
-          className="flex items-center space-x-2"
-        >
-          {isAmerican ? (
-            <Image
-              src="/images/amt.png"
-              alt="American Tourister Logo"
-              width={120}
-              height={40}
-              priority
-            />
-          ) : (
-            <div>
-              <span className="text-xl font-medium text-gray-900 dark:text-gray-100">
-                Portfolio
-              </span>
-            </div>
-          )}
+        <Link href="/" className="flex items-center space-x-2">
+          <span className="text-xl font-medium text-gray-900 dark:text-gray-100">
+            Portfolio
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -107,31 +81,25 @@ export function Navbar() {
                 if (item.dropdown) {
                   return (
                     <NavigationMenuItem key={item.href}>
-                      <NavigationMenuTrigger
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        {item.label}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-gray-100 dark:bg-gray-900 rounded-md shadow-lg">
-                        <motion.ul
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
-                          className="flex flex-col space-y-2 p-2"
+                      <DropdownMenu>
+                        <DropdownMenuTrigger
+                          className={`${navigationMenuTriggerStyle()} cursor-pointer`}
                         >
+                          {item.label}
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="bg-white dark:bg-gray-900 rounded-md shadow-lg">
                           {item.dropdown.map((drop) => (
-                            <li key={drop.href}>
+                            <DropdownMenuItem key={drop.href} asChild>
                               <Link
                                 href={drop.href}
-                                className="flex px-3 py-2 rounded text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800"
+                                className="w-full px-3 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
                               >
                                 {drop.label}
                               </Link>
-                            </li>
+                            </DropdownMenuItem>
                           ))}
-                        </motion.ul>
-                      </NavigationMenuContent>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </NavigationMenuItem>
                   );
                 }
@@ -193,41 +161,24 @@ export function Navbar() {
               {navItems.map((item) => (
                 <li key={item.href} className="w-full text-center">
                   {item.dropdown ? (
-                    <>
-                      <button
-                        className="flex justify-center items-center w-full py-2 font-semibold text-gray-800 dark:text-gray-200"
-                        onClick={() =>
-                          setMobileDropdown(
-                            mobileDropdown === item.href ? null : item.href
-                          )
-                        }
-                      >
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="w-full py-2 font-semibold text-gray-800 dark:text-gray-200">
                         {item.label}
-                      </button>
-                      <AnimatePresence>
-                        {mobileDropdown === item.href && (
-                          <motion.ul
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="flex flex-col space-y-1 overflow-hidden"
-                          >
-                            {item.dropdown.map((drop) => (
-                              <li key={drop.href}>
-                                <Link
-                                  href={drop.href}
-                                  onClick={() => setIsOpen(false)}
-                                  className="block py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
-                                >
-                                  {drop.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </motion.ul>
-                        )}
-                      </AnimatePresence>
-                    </>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="bg-white dark:bg-gray-900 rounded-md shadow-lg w-full">
+                        {item.dropdown.map((drop) => (
+                          <DropdownMenuItem key={drop.href} asChild>
+                            <Link
+                              href={drop.href}
+                              onClick={() => setIsOpen(false)}
+                              className="block py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
+                            >
+                              {drop.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   ) : item.href.startsWith("#") ? (
                     <a
                       href={item.href}
@@ -258,3 +209,4 @@ export function Navbar() {
     </nav>
   );
 }
+

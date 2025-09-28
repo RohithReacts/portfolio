@@ -60,7 +60,7 @@ export default function Blog() {
                   <time className="text-xs uppercase tracking-wide text-zinc-500">
                     {blog.date}
                   </time>
-                  <h3 className="mt-2 text-lg font-semibold text-zinc-900 group-hover:text-blue-600 dark:text-zinc-100">
+                  <h3 className="mt-2 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
                     {blog.title}
                   </h3>
 

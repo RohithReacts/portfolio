@@ -60,7 +60,7 @@ export default function Services() {
             key={index}
             className="group relative p-6 rounded-2xl border border-gray-200 dark:border-gray-800 
                        bg-white/70 dark:bg-gray-900/60 backdrop-blur-lg shadow-sm 
-                       hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                       hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-default"
           >
             {/* Icon container */}
             <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 mx-auto">

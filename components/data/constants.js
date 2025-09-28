@@ -73,7 +73,6 @@ export const SOCIAL_LINKS = [
 
 export const EMAIL = "Gujarathirohithkumar@gmail.com"
 export const NUM = "8374200125"
-export const MAP = "Vaishnavi Sales"
 export const MAP1 = "Rohithreacts"
 
 

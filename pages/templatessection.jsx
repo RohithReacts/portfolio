@@ -16,17 +16,17 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.1 } },
 };
 
 const leftButton = {
   hidden: { opacity: 0, x: -50 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.2 } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.1 } },
 };
 
 const rightButton = {
   hidden: { opacity: 0, x: 50 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.2 } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.1 } },
 };
 
 export default function TemplatesSection() {

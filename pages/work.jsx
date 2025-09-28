@@ -6,8 +6,6 @@ import { Spotlight } from "@/components/motion-primitives/spotlight";
 import Image from "next/image";
 import { Box } from "@radix-ui/themes";
 
-
-
 export default function Work() {
   const icons = [
     "/icon-1.svg",
@@ -20,12 +18,16 @@ export default function Work() {
     "/icon-8.svg",
     "/icon-9.svg",
     "/icon-10.svg",
+    "/icon-11.svg",
+    "/icon-12.svg",
+    "/icon-13.svg",
+    "/icon-14.svg",
+    "/icon-15.svg",
+    "/icon-16.svg",
+    "/icon-17.svg",
   ];
   return (
-    <Box
-      id="work"
-      
-    >
+    <Box id="work">
       <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
       <div className="flex flex-col gap-4">
         {WORK_EXPERIENCE.map((job) => (
@@ -62,7 +64,7 @@ export default function Work() {
           transition={{
             repeat: Infinity,
             repeatType: "loop",
-            duration: 3,
+            duration: 8,
             ease: "linear",
           }}
         >

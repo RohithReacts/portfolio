@@ -6,7 +6,6 @@ import {
   MorphingDialogContent,
   MorphingDialogTrigger,
 } from "@/components/motion-primitives/morphing-dialog";
-import { Box } from "@radix-ui/themes";
 import { XIcon } from "lucide-react";
 
 function ProjectVideo({ src }) {
@@ -55,7 +54,7 @@ function ProjectVideo({ src }) {
 
 export default function Projects() {
   return (
-    <Box id="projects">
+    <div id="projects">
       <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project) => (
@@ -79,6 +78,6 @@ export default function Projects() {
           </div>
         ))}
       </div>
-    </Box>
+    </div>
   );
 }

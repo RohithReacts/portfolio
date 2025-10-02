@@ -1,52 +1,43 @@
+import { Laptop, Palette, Cog, MonitorCogIcon } from "lucide-react";
 
-import { Laptop, Smartphone, Palette, Cog } from "lucide-react";
-
-export default function Services() {
+export default function Skills() {
   const services = [
     {
       icon: <Laptop className="w-8 h-8 text-primary" />,
-      title: "UX & UI",
+      title: "Front-End Development",
       description:
-        "Designing interfaces that are intuitive, efficient, and enjoyable to use.",
+        "HTML5, CSS3, JavaScript (ES6+) React.js, Next.js, Expo (React Native) Tailwind CSS, Shadcn UI, Radix UI, Framer Motion",
     },
     {
-      icon: <Smartphone className="w-8 h-8 text-primary" />,
-      title: "Web & Mobile App",
+      icon: <MonitorCogIcon className="w-8 h-8 text-primary" />,
+      title: "UI Testing & Quality Assurance",
       description:
-        "Transforming ideas into exceptional web and mobile app experiences.",
+        "Playwright + Cucumber (BDD) Serenity/JS with Playwright Automated UI Testing (Screenshots, Video Capture, Reporting) Cross-browser & responsive testing",
     },
     {
       icon: <Palette className="w-8 h-8 text-primary" />,
-      title: "Design & Creative",
+      title: "Design Tools & Workflow",
       description:
-        "Crafting visually stunning designs that connect with your audience.",
+        "Figma, Adobe XD Responsive Web Design (Mobile-first) Accessibility (WCAG) compliance",
     },
     {
       icon: <Cog className="w-8 h-8 text-primary" />,
-      title: "Development",
+      title: "Other Tools",
       description:
-        "Bringing your vision to life with the latest technology and design trends.",
+        "Git/GitHub Agile & Scrum workflows Storybook for UI components",
     },
   ];
 
   return (
-    <section
-    id="apps"
-     className="w-full py-16 px-6">
+    <section id="skills" className="w-full py-16 px-6">
       {/* Heading */}
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-100">
-          Collaborate with{" "}
-          <span className="font-bold text-gray-900 dark:text-white">brands</span>{" "}
-          and agencies <br />
-          to create{" "}
-          <span className="font-bold text-gray-900 dark:text-white">
-            impactful results.
-          </span>
+          Expertise
         </h2>
         <div className="relative inline-block mt-6">
           <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-900 px-3 py-1 rounded-full shadow text-sm font-medium text-gray-600 dark:text-gray-400">
-            Services
+            Skills
           </span>
           <div className="h-px w-40 bg-gray-300 dark:bg-gray-700 mx-auto"></div>
         </div>

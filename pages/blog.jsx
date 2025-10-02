@@ -2,7 +2,6 @@
 import Link from "next/link";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import * as Separator from "@radix-ui/react-separator";
-import { Box } from "@radix-ui/themes";
 
 const blogs = [
   {
@@ -27,7 +26,7 @@ const blogs = [
 
 export default function Blog() {
   return (
-    <Box
+    <div
       id="blog"
      
     >
@@ -75,6 +74,6 @@ export default function Blog() {
           ))}
         </div>
       </div>
-    </Box>
+    </div>
   );
 }

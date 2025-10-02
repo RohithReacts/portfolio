@@ -1,9 +1,8 @@
-import { Box } from "@radix-ui/themes";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <Box id="home">
+    <div id="home">
       <Image
         src="/images/office.jpg"
         alt="travel"
@@ -12,6 +11,6 @@ export default function Hero() {
         priority
         className="object-cover rounded-xl"
       />
-    </Box>
+    </div>
   );
 }

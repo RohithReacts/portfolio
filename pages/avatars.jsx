@@ -60,7 +60,7 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.1, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
 };
 
 export default function Avatar() {
@@ -71,23 +71,40 @@ export default function Avatar() {
       initial="hidden"
       whileInView="show"
       variants={containerVariants}
+      viewport={{ once: true }}
     >
       <div className="max-w-5xl w-full flex flex-col items-center">
-        <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-6">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-8 text-center">
           Meet the Team
         </h2>
 
         {/* Staggered Avatars */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6"
+          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8"
           variants={containerVariants}
         >
           {people.map((person) => (
-            <motion.div key={person.id} variants={itemVariants}>
+            <motion.div
+              key={person.id}
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.08,
+                boxShadow:
+                  "0 0 20px rgba(0,0,0,0.15), 0 0 30px rgba(255,255,255,0.1)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="rounded-full"
+            >
               <AnimatedTooltip items={[person]} />
             </motion.div>
           ))}
         </motion.div>
+
+        <p className="mt-6 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 text-center max-w-xl">
+          A diverse group of professionals collaborating to build modern,
+          user-friendly digital experiences.
+        </p>
       </div>
     </motion.section>
   );

@@ -1,86 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GithubIcon, Eye } from "lucide-react"; // Added Eye icon
+import { GithubIcon, Eye } from "lucide-react";
 import Image from "next/image";
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.25,
-    },
+    transition: { staggerChildren: 0.25 },
   },
 };
 
 const item = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.1 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
 };
 
 const leftButton = {
   hidden: { opacity: 0, x: -50 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.1 } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.2 } },
 };
 
 const rightButton = {
   hidden: { opacity: 0, x: 50 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.1 } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.2 } },
 };
 
 export default function TemplatesSection() {
   return (
     <motion.main>
       <motion.section
-      id="projects"
+        id="templates"
         variants={container}
         initial="hidden"
-        animate="show"
-        className="px-6 md:px-12 lg:px-20 py-16 transition-colors duration-500"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="px-4 sm:px-6 md:px-12 lg:px-20 py-12 md:py-20 transition-colors duration-500"
       >
         {/* Heading */}
         <motion.div variants={item} className="max-w-3xl text-center mx-auto">
-          <h2 className="text-3xl md:text-4xl font-medium mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Start your project with premium templates
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-base font-thin md:text-md">
+          <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
             Explore a curated collection of templates crafted with Tailwind CSS,
             Next.js, React, and Motion-Primitives. Designed for founders,
             startups, agencies, and creators.
           </p>
         </motion.div>
 
-        {/* Templates List */}
-        <div className="mt-16 grid md:grid-cols-2 gap-8 items-start">
+        {/* Template Block 1 */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Template Card */}
           <motion.div variants={item} whileHover={{ scale: 1.02 }}>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
               Portfolio
             </h3>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
+            <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
               Personal website template
             </p>
-            <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
               A fast, minimal, and elegant personal website template with a
               built-in blog. Perfect for developers, designers, and founders who
               want a beautiful and functional online presence.
             </p>
 
-            {/* Buttons with opposite animations */}
-            <div className="flex gap-4 mt-5">
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <motion.a
                 variants={leftButton}
                 href="https://github.com/RohithReacts/portfolio"
-                className="flex items-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
+                className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm md:text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors shadow-sm"
               >
                 <GithubIcon className="w-4 h-4" />
                 Use For Free
               </motion.a>
               <motion.a
                 variants={rightButton}
-                href="/"
-                className="flex items-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition"
+                href="https://rohithreacts.vercel.app/"
+                className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm md:text-base font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-colors shadow-sm"
               >
                 <Eye className="w-4 h-4" />
                 Live Preview
@@ -89,63 +88,64 @@ export default function TemplatesSection() {
           </motion.div>
 
           {/* Template Images */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <motion.div
               variants={item}
               whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-xl shadow-md"
+              className="overflow-hidden rounded-xl shadow-lg"
             >
               <Image
                 src="/images/banner.png"
                 alt="Template Screenshot"
                 width={600}
                 height={400}
-                className="object-cover w-full h-auto"
+                className="object-cover w-full h-full"
               />
             </motion.div>
             <motion.div
               variants={item}
               whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-xl shadow-md"
+              className="overflow-hidden rounded-xl shadow-lg"
             >
               <Image
                 src="/images/banner2.png"
                 alt="Template Screenshot 2"
                 width={600}
                 height={400}
-                className="object-cover w-full h-auto"
+                className="object-cover w-full h-full"
               />
             </motion.div>
           </div>
         </div>
-        {/* Templates List */}
-        <div className="mt-16 grid md:grid-cols-2 gap-8 items-start">
+
+        {/* Template Block 2 */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Template Card */}
           <motion.div variants={item} whileHover={{ scale: 1.02 }}>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-             E Commerce
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+              E-Commerce
             </h3>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
-              Starter kit for high-performance commerce 
+            <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
+              Starter kit for high-performance commerce
             </p>
-            <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+            <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
               A high-performance, server-rendered Next.js App Router ecommerce application.
             </p>
 
-            {/* Buttons with opposite animations */}
-            <div className="flex gap-4 mt-5">
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <motion.a
                 variants={leftButton}
-                href="https://github.com/RohithReacts/portfolio"
-                className="flex items-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition"
+                href="https://github.com/RohithReacts/americantourister"
+                className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm md:text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors shadow-sm"
               >
                 <GithubIcon className="w-4 h-4" />
                 Use For Free
               </motion.a>
               <motion.a
                 variants={rightButton}
-                href="/"
-                className="flex items-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition"
+                href="https://americantourister-sepia.vercel.app/"
+                className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm md:text-base font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-colors shadow-sm"
               >
                 <Eye className="w-4 h-4" />
                 Live Preview
@@ -154,31 +154,31 @@ export default function TemplatesSection() {
           </motion.div>
 
           {/* Template Images */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <motion.div
               variants={item}
               whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-xl shadow-md"
+              className="overflow-hidden rounded-xl shadow-lg"
             >
               <Image
                 src="/images/banner3.png"
                 alt="Template Screenshot"
                 width={600}
                 height={400}
-                className="object-cover w-full h-auto"
+                className="object-cover w-full h-full"
               />
             </motion.div>
             <motion.div
               variants={item}
               whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-xl shadow-md"
+              className="overflow-hidden rounded-xl shadow-lg"
             >
               <Image
                 src="/images/banner4.png"
                 alt="Template Screenshot 2"
                 width={600}
                 height={400}
-                className="object-cover w-full h-auto"
+                className="object-cover w-full h-full"
               />
             </motion.div>
           </div>

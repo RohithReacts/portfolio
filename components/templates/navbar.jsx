@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   NavigationMenu,
@@ -37,7 +37,8 @@ export function Navbar() {
         { href: "#blog", label: "Blog" },
         { href: "#testimonials", label: "Testimonials" },
         { href: "#team", label: "Team" },
-                { href: "#skills", label: "Skills" },
+        { href: "#skills", label: "Skills" },
+        { href: "#templates", label: "Templates" },
       ],
     },
   ];
@@ -84,16 +85,16 @@ export function Navbar() {
                     <NavigationMenuItem key={item.href}>
                       <DropdownMenu>
                         <DropdownMenuTrigger
-                          className={`${navigationMenuTriggerStyle()} cursor-pointer`}
+                          className={`${navigationMenuTriggerStyle()} cursor-pointer flex items-center gap-1`}
                         >
-                          {item.label}
+                          {item.label} <ChevronDown className="w-4 h-4" />
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="bg-white dark:bg-gray-900 rounded-md shadow-lg">
+                        <DropdownMenuContent className="bg-white cursor-pointer dark:bg-gray-900 rounded-md shadow-lg">
                           {item.dropdown.map((drop) => (
                             <DropdownMenuItem key={drop.href} asChild>
                               <Link
                                 href={drop.href}
-                                className="w-full px-3 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
+                                className="w-full px-3 py-2 cursor-pointer text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
                               >
                                 {drop.label}
                               </Link>
@@ -113,7 +114,7 @@ export function Navbar() {
                         className={`${navigationMenuTriggerStyle()} ${
                           activeSection === item.href
                             ? "text-blue-600 dark:text-blue-400 font-semibold"
-                            : "text-gray-800 dark:text-gray-200"
+                            : "text-gray-800 dark:text-gray-200 cursor-pointer"
                         }`}
                         onClick={() => setIsOpen(false)}
                       >
@@ -140,9 +141,9 @@ export function Navbar() {
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="p-2">
             {isOpen ? (
-              <X className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+              <X className="h-6 w-6 text-gray-800 dark:text-gray-200 cursor-pointer" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-800 dark:text-gray-200" />
+              <Menu className="h-6 w-6 text-gray-800 dark:text-gray-200 cursor-pointer" />
             )}
           </button>
         </div>
@@ -160,11 +161,11 @@ export function Navbar() {
           >
             <ul className="flex flex-col justify-center items-center space-y-2">
               {navItems.map((item) => (
-                <li key={item.href} className="w-full text-center">
+                <li key={item.href} className="w-full text-center m-2 cursor-pointer">
                   {item.dropdown ? (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="w-full py-2 font-semibold text-gray-800 dark:text-gray-200">
-                        {item.label}
+                      <DropdownMenuTrigger className="w-full py-2 font-semibold text-gray-800 dark:text-gray-200 flex justify-center items-center gap-1">
+                        {item.label} <ChevronDown className="w-4 h-4" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="bg-white dark:bg-gray-900 rounded-md shadow-lg w-full">
                         {item.dropdown.map((drop) => (
@@ -172,7 +173,7 @@ export function Navbar() {
                             <Link
                               href={drop.href}
                               onClick={() => setIsOpen(false)}
-                              className="block py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
+                              className="block py-2 text-gray-700 cursor-pointer dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-800 rounded"
                             >
                               {drop.label}
                             </Link>
@@ -187,7 +188,7 @@ export function Navbar() {
                       className={`block py-2 ${
                         activeSection === item.href
                           ? "text-blue-600 dark:text-blue-400 font-semibold"
-                          : "text-gray-800 dark:text-gray-200"
+                          : "text-gray-800 dark:text-gray-200 cursor-pointer"
                       }`}
                     >
                       {item.label}
@@ -196,7 +197,7 @@ export function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="block py-2 text-gray-800 dark:text-gray-200"
+                      className="block py-2 text-gray-800 dark:text-gray-200 cursor-pointer"
                     >
                       {item.label}
                     </Link>
@@ -210,4 +211,3 @@ export function Navbar() {
     </nav>
   );
 }
-

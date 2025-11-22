@@ -68,17 +68,6 @@ export default function Connect() {
           ))}
         </div>
       </div>
-
-      {/* Right side (Image) */}
-      <div className="flex justify-center md:justify-end">
-        <Image
-          src="/images/logo1.png" // 🔹 put your image path here
-          alt="Connect illustration"
-          width={250}
-          height={250}
-          className="rounded-2xl shadow-lg object-cover"
-        />
-      </div>
     </section>
   );
 }

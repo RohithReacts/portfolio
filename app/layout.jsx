@@ -4,8 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "../components/theme/theme-provider";
 import { Header } from "../components/templates/header";
 import { Footer } from "../components/templates/footer";
-import { Suspense } from "react";
-import Loading from "./loading";
 import NextTopLoader from "nextjs-toploader";
 import {  Theme } from "@radix-ui/themes";
 import ScrollToTop from "@/components/top";
@@ -63,7 +61,7 @@ export default function RootLayout({ children }) {
               <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
                 <div className="relative mx-auto w-full w-screen-xl flex-1 px-4 pt-20">
                   <Header />
-                  <Suspense fallback={<Loading />}>{children}</Suspense>
+                  {children}
 <ScrollToTop />
                   <Footer />
                 </div>

@@ -61,8 +61,8 @@ export default function AboutMe() {
           user-friendly web applications. I specialize in building modern
           front-end experiences using{" "}
           <span className="font-medium">Next.js</span>,{" "}
-          <span className="font-medium">Tailwind CSS</span>, and UI
-          libraries like Radix UI and Shadcn/UI.
+          <span className="font-medium">Tailwind CSS</span>, and UI libraries
+          like Radix UI and Shadcn/UI.
         </p>
         <p className="mt-4 text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
           When I’m not coding, I enjoy exploring new tech trends, improving my
@@ -72,17 +72,6 @@ export default function AboutMe() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
-          <motion.a
-            variants={leftButton}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            href={`mailto:${EMAIL}`}
-            className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm sm:text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors shadow-sm"
-          >
-            <Mail className="w-4 h-4" />
-            Get In Touch
-          </motion.a>
-
           <motion.a
             variants={rightButton}
             whileHover={{ scale: 1.05 }}

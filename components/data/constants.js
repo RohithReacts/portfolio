@@ -8,17 +8,18 @@ export const PROJECTS = [
     id: "project1",
   },
   {
-    name: "How People Learned to Code Before Google & StackOverflow",
-    description: "UI kit to make beautiful, animated interfaces.",
+    name: "Better Auth",
+    description:
+      "The most comprehensive authentication framework for TypeScript.",
     link: "https://reacts-dev-better-auth.vercel.app/",
     video: "/videos/betterauth.webm",
     id: "project2",
   },
   {
-    name: "",
-    description: "UI kit to make beautiful, animated interfaces.",
-    link: "",
-    video: "/videos",
+    name: "American Tourister",
+    description: "Welcome to the world of American Tourister!",
+    link: "https://americantourister-sepia.vercel.app/",
+    video: "/videos/american.webm",
     id: "project3",
   },
 ];

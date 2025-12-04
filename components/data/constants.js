@@ -15,13 +15,6 @@ export const PROJECTS = [
     video: "/videos/betterauth.webm",
     id: "project2",
   },
-  {
-    name: "American Tourister",
-    description: "Welcome to the world of American Tourister!",
-    link: "https://americantourister-sepia.vercel.app/",
-    video: "/videos/american.webm",
-    id: "project3",
-  },
 ];
 
 export const WORK_EXPERIENCE = [

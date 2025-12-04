@@ -38,7 +38,6 @@ export default function TemplatesSection() {
         viewport={{ once: true }}
         className="px-4 sm:px-6 md:px-12 lg:px-20 py-12 md:py-20 transition-colors duration-500"
       >
-        {/* Heading */}
         <motion.div variants={item} className="max-w-3xl text-center mx-auto">
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Start your project with premium templates
@@ -50,9 +49,7 @@ export default function TemplatesSection() {
           </p>
         </motion.div>
 
-        {/* Template Block 1 */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* Template Card */}
           <motion.div variants={item} whileHover={{ scale: 1.02 }}>
             <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
               Portfolio
@@ -66,7 +63,6 @@ export default function TemplatesSection() {
               want a beautiful and functional online presence.
             </p>
 
-            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <motion.a
                 variants={leftButton}
@@ -87,7 +83,6 @@ export default function TemplatesSection() {
             </div>
           </motion.div>
 
-          {/* Template Images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <motion.div
               variants={item}
@@ -118,84 +113,17 @@ export default function TemplatesSection() {
           </div>
         </div>
 
-
-        {/* Template Block 2 */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* Template Card */}
           <motion.div variants={item} whileHover={{ scale: 1.02 }}>
             <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
-              E-Commerce
-            </h3>
-            <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
-              Starter kit for high-performance commerce
-            </p>
-            <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-              A high-performance, server-rendered Next.js App Router ecommerce application.
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <motion.a
-                variants={leftButton}
-                href="https://github.com/RohithReacts/americantourister"
-                className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm md:text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors shadow-sm"
-              >
-                <GithubIcon className="w-4 h-4" />
-                Use For Free
-              </motion.a>
-              <motion.a
-                variants={rightButton}
-                href="https://americantourister-sepia.vercel.app/"
-                className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm md:text-base font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-colors shadow-sm"
-              >
-                <Eye className="w-4 h-4" />
-                Live Preview
-              </motion.a>
-            </div>
-          </motion.div>
-
-          {/* Template Images */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <motion.div
-              variants={item}
-              whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-xl shadow-lg"
-            >
-              <Image
-                src="/images/banner3.png"
-                alt="Template Screenshot"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full"
-              />
-            </motion.div>
-            <motion.div
-              variants={item}
-              whileHover={{ scale: 1.03 }}
-              className="overflow-hidden rounded-xl shadow-lg"
-            >
-              <Image
-                src="/images/banner4.png"
-                alt="Template Screenshot 2"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full"
-              />
-            </motion.div>
-          </div>
-        </div>
-
-         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* Template Card */}
-          <motion.div variants={item} whileHover={{ scale: 1.02 }}>
-            <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
-              Better Auth 
+              Better Auth
             </h3>
             <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
               The most comprehensive authentication framework for TypeScript.
             </p>
             <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-              Simple starter pack for Better Auth, with Shadcn, Drizzle, and Neon and login signup dashboard
+              Simple starter pack for Better Auth, with Shadcn, Drizzle, and
+              Neon and login signup dashboard
             </p>
 
             {/* Buttons */}
@@ -249,7 +177,6 @@ export default function TemplatesSection() {
             </motion.div>
           </div>
         </div>
-
       </motion.section>
     </motion.main>
   );

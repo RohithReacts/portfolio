@@ -50,14 +50,6 @@ export const SOCIAL_LINKS = [
     link: "https://github.com/RohithReacts",
   },
   {
-    label: "X",
-    link: "https://x.com/RohithGNow",
-  },
-  {
-    label: "LinkedIn",
-    link: "https://www.linkedin.com/in/rohith-kumar-327a30249/",
-  },
-  {
     label: "Instagram",
     link: "https://www.instagram.com/rohithreacts/",
   },

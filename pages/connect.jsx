@@ -1,6 +1,6 @@
 import { EMAIL, MAP1, NUM, SOCIAL_LINKS } from "@/components/data/constants";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
-import { Mail, MapIcon, Phone } from "lucide-react";
+import { Mail, MapIcon, Phone, Video } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -56,6 +56,26 @@ export default function Connect() {
               className="dark:text-zinc-300"
             >
               {MAP1}
+            </Link>
+          </div>
+          <div className="flex items-center gap-2">
+            <Video className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
+            <Link
+              href={`#`}
+              target="_blank"
+              className="dark:text-zinc-300"
+            >
+              Microsoft Teams Meet
+            </Link>
+          </div>
+          <div className="flex items-center gap-2">
+            <Video className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
+            <Link
+              href={`#`}
+              target="_blank"
+              className="dark:text-zinc-300"
+            >
+              Zoom Meet
             </Link>
           </div>
         </div>

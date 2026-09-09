@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Mail, FolderOpen } from "lucide-react";
+import { Mail, FolderOpen, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { EMAIL } from "@/components/data/constants";
 
@@ -72,6 +72,18 @@ export default function AboutMe() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
+          <motion.a
+            variants={leftButton}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            href="/images/rohithcv.pdf"
+            download="Rohith_Kumar_CV.pdf"
+            className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-neutral-900 text-white text-sm sm:text-base font-medium hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 transition-colors shadow-sm"
+          >
+            <Download className="w-4 h-4" />
+            Download CV
+          </motion.a>
+
           <motion.a
             variants={rightButton}
             whileHover={{ scale: 1.05 }}

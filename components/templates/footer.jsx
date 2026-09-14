@@ -1,39 +1,39 @@
-'use client'
-import { AnimatedBackground } from '../../components/motion-primitives/animated-background'
-import { TextLoop } from '../../components/motion-primitives/text-loop'
-import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
+"use client";
+import { AnimatedBackground } from "../../components/motion-primitives/animated-background";
+import { TextLoop } from "../../components/motion-primitives/text-loop";
+import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const THEMES_OPTIONS = [
   {
-    label: 'Light',
-    id: 'light',
+    label: "Light",
+    id: "light",
     icon: <SunIcon className="h-4 w-4" />,
   },
   {
-    label: 'Dark',
-    id: 'dark',
+    label: "Dark",
+    id: "dark",
     icon: <MoonIcon className="h-4 w-4" />,
   },
   {
-    label: 'System',
-    id: 'system',
+    label: "System",
+    id: "system",
     icon: <MonitorIcon className="h-4 w-4" />,
   },
-]
+];
 
 function ThemeSwitch() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   return (
@@ -41,13 +41,13 @@ function ThemeSwitch() {
       className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
       defaultValue={theme}
       transition={{
-        type: 'spring',
+        type: "spring",
         bounce: 0,
         duration: 0.2,
       }}
       enableHover={false}
       onValueChange={(id) => {
-        setTheme(id)
+        setTheme(id);
       }}
     >
       {THEMES_OPTIONS.map((theme) => {
@@ -61,10 +61,10 @@ function ThemeSwitch() {
           >
             {theme.icon}
           </button>
-        )
+        );
       })}
     </AnimatedBackground>
-  )
+  );
 }
 
 export function Footer() {
@@ -73,8 +73,8 @@ export function Footer() {
       <div className="flex items-center justify-between">
         <Link href="/" target="_blank" rel="noreferrer">
           <TextLoop className="text-xs text-zinc-500">
-            <span>© 2025 Rohithreacts.</span>
-            <span>Built with Motion-Primitives.</span>
+            <span>© 2026</span>
+            <span>Rohithreacts.dev</span>
           </TextLoop>
         </Link>
         <div className="text-xs text-zinc-400">
@@ -82,5 +82,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

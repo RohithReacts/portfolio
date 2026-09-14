@@ -9,6 +9,9 @@ import Skills from "@/pages/skills";
 import TemplatesSection from "@/pages/templatessection";
 import Testimonials from "@/pages/testimonials";
 import Work from "@/pages/work";
+import Process from "@/pages/process";
+import TechStack from "@/pages/tech-stack";
+import CTA from "@/pages/cta";
 
 export default function Page() {
   return (
@@ -21,9 +24,12 @@ export default function Page() {
         <AboutMe />
         <Work />
         <Services/>
+        <Process />
         <Blog />
         <Skills/>
+        <TechStack />
         <Testimonials />
+        <CTA />
         <Connect />
       </section>
     </div>

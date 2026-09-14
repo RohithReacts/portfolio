@@ -116,21 +116,20 @@ export default function TemplatesSection() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <motion.div variants={item} whileHover={{ scale: 1.02 }}>
             <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
-              Better Auth
+              Ad Next Matrix
             </h3>
             <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">
-              The most comprehensive authentication framework for TypeScript.
+              Discover our range of smart split-screen solutions designed to elevate your visual 
             </p>
             <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-              Simple starter pack for Better Auth, with Shadcn, Drizzle, and
-              Neon and login signup dashboard
+              experience, streamline workflow, and captivate your audience.
             </p>
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <motion.a
                 variants={leftButton}
-                href="https://github.com/RohithReacts/Reacts.dev-Better-Auth."
+                href="https://github.com/RohithReacts/AD-NextMatrix"
                 className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-black text-white text-sm md:text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors shadow-sm"
               >
                 <GithubIcon className="w-4 h-4" />
@@ -138,7 +137,7 @@ export default function TemplatesSection() {
               </motion.a>
               <motion.a
                 variants={rightButton}
-                href="https://reacts-dev-better-auth.vercel.app/"
+                href="https://www.adnextmatrix.com/"
                 className="flex items-center justify-center gap-2 px-5 py-2 rounded-md bg-gray-100 text-sm md:text-base font-medium hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-colors shadow-sm"
               >
                 <Eye className="w-4 h-4" />
@@ -155,7 +154,7 @@ export default function TemplatesSection() {
               className="overflow-hidden rounded-xl shadow-lg"
             >
               <Image
-                src="/images/login.png"
+                src="/images/ad1.png"
                 alt="Template Screenshot"
                 width={600}
                 height={400}
@@ -168,7 +167,7 @@ export default function TemplatesSection() {
               className="overflow-hidden rounded-xl shadow-lg"
             >
               <Image
-                src="/images/dashboard.png"
+                src="/images/ad2.png"
                 alt="Template Screenshot 2"
                 width={600}
                 height={400}

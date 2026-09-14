@@ -10,7 +10,6 @@ import TemplatesSection from "@/pages/templatessection";
 import Testimonials from "@/pages/testimonials";
 import Work from "@/pages/work";
 import Process from "@/pages/process";
-import TechStack from "@/pages/tech-stack";
 import CTA from "@/pages/cta";
 
 export default function Page() {
@@ -27,7 +26,6 @@ export default function Page() {
         <Process />
         <Blog />
         <Skills/>
-        <TechStack />
         <Testimonials />
         <CTA />
         <Connect />

@@ -8,11 +8,11 @@ export const PROJECTS = [
     id: "project1",
   },
   {
-    name: "Better Auth",
+    name: "Ad Next Matrix",
     description:
-      "The most comprehensive authentication framework for TypeScript.",
-    link: "https://reacts-dev-better-auth.vercel.app/",
-    video: "/videos/betterauth.webm",
+      "Discover our range of smart split-screen solutions designed to elevate your visual experience, streamline workflow, and captivate your audience.",
+    link: "https://www.adnextmatrix.com/",
+    video: "/videos/adnextmatrix.webm",
     id: "project2",
   },
 ];

@@ -35,7 +35,7 @@ export default function AboutMe() {
         className="w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-2xl overflow-hidden shadow-xl border border-neutral-200 dark:border-neutral-700 flex-shrink-0"
       >
         <Image
-          src="/images/rohith.png"
+          src="/images/rohith.jpeg"
           alt="Rohith Kumar"
           width={324}
           height={324}

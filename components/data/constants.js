@@ -4,7 +4,7 @@ export const PROJECTS = [
     description:
       "Advanced components and templates to craft beautiful websites.",
     link: "https://rohithreacts.vercel.app/",
-    video: "/videos/portfolio.mp4",
+    video: "/videos/portfolio.webm",
     id: "project1",
   },
   {
@@ -12,7 +12,7 @@ export const PROJECTS = [
     description:
       "Discover our range of smart split-screen solutions designed to elevate your visual experience, streamline workflow, and captivate your audience.",
     link: "https://www.adnextmatrix.com/",
-    video: "/videos/adnextmatrix.mp4",
+    video: "/videos/adnextmatrix.webm",
     id: "project2",
   },
 ];

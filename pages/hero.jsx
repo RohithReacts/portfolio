@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Hero() {
@@ -48,35 +48,25 @@ export default function Hero() {
             </svg>
 
             {/* Content inside the card */}
-            <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold text-[#1662A6] dark:text-[#1CC2CA] bg-[#1662A6]/10 dark:bg-[#103768]/80 mb-6 border border-[#1662A6]/20 dark:border-[#164285] backdrop-blur-sm">
-              <span className="flex w-2 h-2 rounded-full bg-[#1662A6] dark:bg-[#1CC2CA] mr-2 animate-pulse"></span>
-              Build. Test. Automate. Launch.
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.15]">
-              Full-Stack Development <br className="hidden sm:block" />
+              Reliable IT Solutions &{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1662A6] via-[#15AFC4] to-[#1CC2CA]">
-                & Software Testing Services
-              </span>
+                Web Development
+              </span>{" "}
+              to Grow Your Business
             </h1>
 
-            <p className="text-md sm:text-md text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-              I help businesses, startups, and individuals turn ideas into
-              modern, reliable, and scalable web applications — from frontend
-              development to backend systems, APIs, databases, and automated
-              testing.
-            </p>
-
-            <p className="text-base font-medium text-slate-800 dark:text-slate-200 mb-8 border-l-4 border-[#15AFC4] pl-4 py-1">
-              Build your product. Improve your application. Automate your
-              testing.
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+              We help small businesses, startups, and retail shops build
+              high-performance websites, automate daily workflows, and solve
+              everyday tech problems.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Button asChild size="lg" className="w-full sm:w-auto">
-                <a href="#projects">
-                  Start a Project
-                  <ArrowRight className="w-4 h-4" />
+                <a href="#connect">
+                  Request a Free Consultation
+                  <ArrowRight className="w-4 h-4 ml-1" />
                 </a>
               </Button>
               <Button
@@ -85,9 +75,8 @@ export default function Hero() {
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                <a href="#connect">
-                  Book a Meeting
-                  <Calendar className="w-4 h-4" />
+                <a href="#projects">
+                  View Our Work
                 </a>
               </Button>
             </div>
